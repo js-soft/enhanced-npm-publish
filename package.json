@@ -6,10 +6,10 @@
   "license": "MIT",
   "author": "js-soft GmbH",
   "bin": "index.js",
+  "dependencies": {
+    "pacote": "^12.0.3"
+  },
   "publishConfig": {
     "access": "public"
-  },
-  "dependecies": {
-    "pacote": "^12.0.3"
   }
 }

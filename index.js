@@ -1,6 +1,5 @@
 const { spawn } = require("child_process")
 const { readFileSync } = require("fs")
-const { runMain } = require("module")
 const pacote = require("pacote")
 
 function getPackageInfo() {
