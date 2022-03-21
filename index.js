@@ -36,7 +36,8 @@ async function run() {
     args.splice(0, 2)
     args = args.filter((arg) => arg !== "--if-possible")
 
-    spawn("npm", ["publish", ...args], { stdio: "inherit" })
+    const child = spawn("npm", ["publish", ...args], { stdio: "inherit" })
+    child.on("exit", (code) => process.exit(code))
   }
 }
 
