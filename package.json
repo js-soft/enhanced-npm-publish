@@ -1,6 +1,6 @@
 {
   "name": "enhanced-publish",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Npm publish command with lerna's from-package publish behaviour.",
   "repository": "github:js-soft/enhanced-npm-publish",
   "license": "MIT",
