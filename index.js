@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
+// @ts-check
+
 const { spawn } = require("child_process")
 const { readFileSync } = require("fs")
 const pacote = require("pacote")
 
 function getPackageInfo() {
-  const pJson = JSON.parse(readFileSync("./package.json"))
+  const pJson = JSON.parse(readFileSync("./package.json", "utf8"))
 
   return {
     name: pJson.name,
@@ -56,7 +58,7 @@ async function run() {
   }
 
   const child = spawn("npm", ["publish", ...args], { stdio: "inherit" })
-  child.on("exit", (code) => process.exit(code))
+  child.on("exit", (code) => process.exit(code ?? 0))
 }
 
 run()
