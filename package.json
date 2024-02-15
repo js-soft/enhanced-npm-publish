@@ -10,7 +10,7 @@
     "index.js"
   ],
   "dependencies": {
-    "pacote": "^15.0.6"
+    "pacote": "^17.0.6"
   },
   "publishConfig": {
     "access": "public"
