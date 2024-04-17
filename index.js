@@ -39,6 +39,19 @@ async function run() {
   }
 
   const pkg = getPackageInfo()
+
+  const semverWithPreidRegex = /^\d+\.\d+\.\d+(?:-([a-z]+)(?:\.\d+)+)?$/
+  const semverMatches = semverWithPreidRegex.exec(pkg.version)
+
+  if (process.argv.includes("--only-prerelease")) {
+    console.log("Only prerelease packages will be published.")
+
+    if (!semverMatches || !semverMatches[1]) {
+      console.error(`The version '${pkg.version}' of package '${pkg.name}' is not a prerelease version, aborting.`)
+      process.exit(0)
+    }
+  }
+
   const isPublished = await existsPackageInRegistry(pkg)
 
   if (process.argv.includes("--if-possible") && isPublished) {
@@ -50,8 +63,6 @@ async function run() {
   args.splice(0, 2)
   args = args.filter((arg) => !newFlags.includes(arg))
 
-  const semverWithPreidRegex = /^\d+\.\d+\.\d+(?:-([a-z]+)(?:\.\d+)+)?$/
-  const semverMatches = semverWithPreidRegex.exec(pkg.version)
   if (process.argv.includes("--use-preid-as-tag") && semverMatches && semverMatches[1]) {
     const preid = semverMatches[1]
     args.push("--tag", preid)
