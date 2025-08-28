@@ -40,7 +40,7 @@ async function run() {
 
   const pkg = getPackageInfo()
 
-  const semverWithPreidRegex = /^\d+\.\d+\.\d+(?:-([a-z]+)(?:\.\d+)+)?$/
+  const semverWithPreidRegex = /^\d+\.\d+\.\d+(?:-([a-z0-9]+)(?:\.\d+)+)?$/
   const semverMatches = semverWithPreidRegex.exec(pkg.version)
 
   if (process.argv.includes("--only-prerelease")) {
