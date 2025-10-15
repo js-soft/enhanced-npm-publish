@@ -10,7 +10,7 @@
     "index.js"
   ],
   "dependencies": {
-    "pacote": "^21.0.0"
+    "pacote": "^21.0.3"
   },
   "publishConfig": {
     "access": "public"
