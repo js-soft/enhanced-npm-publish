@@ -15,6 +15,9 @@ function getPackageInfo() {
   }
 }
 
+/**
+ * @param {{ name: string, version: string }} pkg
+ */
 async function existsPackageInRegistry(pkg) {
   return await pacote.packument(pkg.name).then(
     (packument) => {
