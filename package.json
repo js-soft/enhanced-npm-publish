@@ -9,8 +9,15 @@
   "files": [
     "index.js"
   ],
+  "scripts": {
+    "lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:tsc",
+    "lint:prettier": "prettier --check ."
+  },
   "dependencies": {
     "pacote": "^21.0.4"
+  },
+  "devDependencies": {
+    "@js-soft/license-check": "^1.0.10"
   },
   "publishConfig": {
     "access": "public"
