@@ -2,8 +2,8 @@ name: Publish
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "*"
 
 jobs:
   publish-npm:
@@ -18,4 +18,5 @@ jobs:
           node-version: current
           registry-url: https://registry.npmjs.org
       - run: npm ci
+      - run: npm version --no-git-tag-version ${{ github.ref_name }}
       - run: node index.js --if-possible
