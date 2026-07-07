@@ -1,10 +1,9 @@
 {
   "name": "enhanced-publish",
-  "version": "1.1.8",
   "description": "Npm publish command with lerna's from-package publish behaviour.",
   "repository": "github:js-soft/enhanced-npm-publish",
   "license": "MIT",
-  "author": "js-soft GmbH",
+  "author": "js-soft AG",
   "bin": "index.js",
   "files": [
     "index.js"
