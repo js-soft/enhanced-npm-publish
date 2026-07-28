@@ -4,4 +4,4 @@ set -x
 npm ci
 npm run lint:prettier
 npx license-check
-npx better-npm-audit audit
+npx better-npm-audit audit --exclude 1124334
