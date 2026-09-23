@@ -16,8 +16,8 @@
     "pacote": "^22.0.0"
   },
   "devDependencies": {
-    "@js-soft/license-check": "^1.0.12",
-    "prettier": "^3.9.6"
+    "@js-soft/license-check": "1.0.15",
+    "prettier": "3.9.8"
   },
   "publishConfig": {
     "access": "public"
